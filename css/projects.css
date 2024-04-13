@@ -144,4 +144,10 @@ a {
   right: 10px;
   cursor: pointer;
 }
+#close-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  margin-top: 20px;
+  margin-bottom: 20px; /* Add some bottom margin for spacing */
+}
 
