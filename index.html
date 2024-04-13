@@ -17,85 +17,16 @@
   </head>
   <body>
     <h1 class="text-center">Projects</h1>
+
     <p class="text-center">Here is the full list of games on this site, play some of your favorites or find a new one!</p>
     <p class="text-center" id="start-menu">
       <a href="/dump/index.html"><button class="zoom" id="gs" style="background-color: #b625cc;">Settings</button></a>
     </p>
-    <div id="search-container">
-        <form id="search-form">
-            <input type="text" id="search" name="search" placeholder="Search...">
-            <input type="submit" value="Search">
-        </form>
-    </div>
-    <div id="results" class="flex-container"></div>
 
-    <script>
-        var items = [
-            {
-                title: "1v1 Old Old",
-                url: "projects/1v1-Old-Old/1v1.html",
-                icon: "projects/1v1-Old-Old/favicon.ico"
-            },
-            {
-                title: "1v1 Old",
-                url: "projects/1v1-Old/index.html",
-                icon: "projects/1v1-Old/favicon.ico"
-            },
-            {
-                title: "1v1 New",
-                url: "projects/1v1-New/1v1.html",
-                icon: "projects/1v1-New/favicon.ico"
-            },
-            {
-                title: "Bitlife",
-                url: "projects/Bitlife/Bitlife.html",
-                icon: "projects/Bitlife/favicon.ico"
-            },
-            {
-                title: "Edge Not Found",
-                url: "projects/edgenotfound/index.html",
-                icon: "projects/edgenotfound/edge.png"
-            }
-        ];
+    <p class="text-center" id="start-menu">
+      <a href="/search.html"><button class="zoom" id="gs" style="background-color: #b625cc;">Search</button></a>
+    </p>
 
-        document.getElementById('search-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent form submission
-            var searchQuery = document.getElementById('search').value;
-            showResults(searchQuery);
-        });
-
-        function showResults(query) {
-            var resultsDiv = document.getElementById('results');
-            resultsDiv.innerHTML = ''; // Clear previous results
-
-            items.filter(function(item) {
-                return item.title.toLowerCase().includes(query.toLowerCase());
-            }).forEach(function(item) {
-                var link = document.createElement('a');
-                link.href = item.url;
-                link.className = 'game-link container';
-
-                var tile = document.createElement('div');
-                tile.className = 'game-tile';
-
-                var icon = document.createElement('img');
-                icon.className = 'game-icon';
-                icon.src = item.icon;
-                icon.alt = 'icon';
-
-                var title = document.createElement('h1');
-                title.className = 'game-title';
-                title.textContent = item.title;
-
-                tile.appendChild(icon);
-                tile.appendChild(title);
-                link.appendChild(tile);
-                resultsDiv.appendChild(link);
-            });
-        }
-    </script>
-</body>
-</html>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5756835229788588" crossorigin="anonymous"></script>
     <ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-5756835229788588" data-ad-slot="6230603875" data-ad-format="auto" data-full-width-responsive="true"></ins>
     <script>

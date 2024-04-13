@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Box Example</title>
+    <style>
+        /* Styles for search box and results */
+        /* ... */
+    </style>
+</head>
+<body>
+    <div id="search-container">
+        <form id="search-form">
+            <input type="text" id="search" name="search" placeholder="Search...">
+            <input type="submit" value="Search">
+        </form>
+    </div>
+    <div id="results" class="flex-container"></div>
+
+    <script>
+        var items = [
+            {
+                title: "1v1 Old Old",
+                url: "projects/1v1-Old-Old/1v1.html",
+                icon: "projects/1v1-Old-Old/favicon.ico"
+            },
+            {
+                title: "1v1 Old",
+                url: "projects/1v1-Old/index.html",
+                icon: "projects/1v1-Old/favicon.ico"
+            },
+            {
+                title: "1v1 New",
+                url: "projects/1v1-New/1v1.html",
+                icon: "projects/1v1-New/favicon.ico"
+            },
+            {
+                title: "Bitlife",
+                url: "projects/Bitlife/Bitlife.html",
+                icon: "projects/Bitlife/favicon.ico"
+            },
+            {
+                title: "Edge Not Found",
+                url: "projects/edgenotfound/index.html",
+                icon: "projects/edgenotfound/edge.png"
+            }
+        ];
+
+        document.getElementById('search-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            var searchQuery = document.getElementById('search').value;
+            showResults(searchQuery);
+        });
+
+        function showResults(query) {
+            var resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = ''; // Clear previous results
+
+            items.filter(function(item) {
+                return item.title.toLowerCase().includes(query.toLowerCase());
+            }).forEach(function(item) {
+                var link = document.createElement('a');
+                link.href = item.url;
+                link.className = 'game-link container';
+
+                var tile = document.createElement('div');
+                tile.className = 'game-tile';
+
+                var icon = document.createElement('img');
+                icon.className = 'game-icon';
+                icon.src = item.icon;
+                icon.alt = 'icon';
+
+                var title = document.createElement('h1');
+                title.className = 'game-title';
+                title.textContent = item.title;
+
+                tile.appendChild(icon);
+                tile.appendChild(title);
+                link.appendChild(tile);
+                resultsDiv.appendChild(link);
+            });
+        }
+    </script>
+</body>
+</html>
