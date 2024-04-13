@@ -106,28 +106,35 @@ a {
   font-size: 16px;
   border-radius: 20px;
 }
+/* projects.css */
+#search-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  margin-top: 20px;
+  margin-bottom: 20px; /* Add some bottom margin for spacing */
+}
+
 #search-form {
-    display: inline-block;
-    background-color: #949494; /* Match the background color of game-tile */
-    padding: 10px;
-    border-radius: 30px; /* Match the border-radius of game-tile */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #949494; /* Match the background color of game-tile */
+  padding: 10px;
+  border-radius: 30px; /* Match the border-radius of game-tile */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #search {
-    padding: 5px 10px;
-    font-size: 16px;
-    border: none; /* Remove border */
-    background-color: transparent; /* Make background transparent */
-    color: #ffffff; /* Text color */
-    outline: none; /* Remove outline */
-    width: 80%; /* Adjust width */
+  padding: 5px 10px;
+  font-size: 16px;
+  border: none; /* Remove border */
+  background-color: transparent; /* Make background transparent */
+  color: #ffffff; /* Text color */
+  outline: none; /* Remove outline */
+  width: 80%; /* Adjust width */
 }
 
 #search:focus {
-    outline: none;
+  outline: none;
 }
 
 #search::placeholder {
-    color: #ffffff;
+  color: #ffffff;
 }
