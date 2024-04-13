@@ -106,3 +106,28 @@ a {
   font-size: 16px;
   border-radius: 20px;
 }
+#search-form {
+    display: inline-block;
+    background-color: #949494; /* Match the background color of game-tile */
+    padding: 10px;
+    border-radius: 30px; /* Match the border-radius of game-tile */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#search {
+    padding: 5px 10px;
+    font-size: 16px;
+    border: none; /* Remove border */
+    background-color: transparent; /* Make background transparent */
+    color: #ffffff; /* Text color */
+    outline: none; /* Remove outline */
+    width: 80%; /* Adjust width */
+}
+
+#search:focus {
+    outline: none;
+}
+
+#search::placeholder {
+    color: #ffffff;
+}
