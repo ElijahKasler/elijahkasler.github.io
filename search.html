@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Projects | 3kh0</title>
     <meta name="keywords" content="front-end web developer, unblocked, games, google sites, unblocked games mom, ublocked, code, coding, programmer, development, javascript, jquery, bootstrap, sass, less, git" />
     <meta property="og:title" content="Welcome to 3kh0.github.io, your best option for unblocked games on the internet." />
@@ -14,7 +14,7 @@
     <link rel="shortcut-icon" href="/favicon.ico" />
     <link rel="stylesheet" href="/css/projects.css" />
     <script src="/js/main.js"></script>
-  </head>
+</head>
 <body>
     <div id="search-container">
         <form id="search-form">
@@ -22,7 +22,10 @@
             <input type="submit" value="Search">
         </form>
     </div>
-    <div id="results" class="flex-container"></div>
+    <div id="game-list" class="flex-container">
+        <!-- Game list items here -->
+    </div>
+    <div id="results" class="flex-container hidden"></div>
 
     <script>
         var items = [
@@ -61,6 +64,7 @@
 
         function showResults(query) {
             var resultsDiv = document.getElementById('results');
+            var gameListDiv = document.getElementById('game-list');
             resultsDiv.innerHTML = ''; // Clear previous results
 
             items.filter(function(item) {
@@ -87,6 +91,10 @@
                 link.appendChild(tile);
                 resultsDiv.appendChild(link);
             });
+
+            // Hide game list and show results
+            gameListDiv.classList.add('hidden');
+            resultsDiv.classList.remove('hidden');
         }
     </script>
 </body>
