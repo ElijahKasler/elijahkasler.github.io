@@ -40,6 +40,7 @@ input {
 }
 
 .console-input {
+  width: 85%
   padding-bottom: 15%;
   font-family: "Montserrat", sans-serif;
 }
