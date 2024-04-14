@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Settings | 3kh0</title>
+    <title>Settings | Scott</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/css/redirect.css" />
     <link rel="stylesheet" href="/css/tab.css" />
@@ -15,8 +15,7 @@
     <p class="text-center" id="message">
       Here you can configure the site to your needs.
     </p>
-    <h2>Settings | Scott</h2>
-    <div class="console-container">
+        <div class="console-container">
       <div class="console">
         <div class="consolebody">
           <p>Enter a new tab title or a image URL below. Whatever you set will be used all over the site.</p>
@@ -24,11 +23,13 @@
           <p>Output: <span id="console-output"></span></p>
         </div>
       </div>
-      <div class="button-wrapper">
-        <button onclick="changeTabTitle();" class="console-button">Set Title</button>
-        <button onclick="changeTabIcon();" class="console-button">Set Icon</button>
-        <button onclick="resetTabSettings();" class="console-button">Uncloak</button>
-      </div>
+<div style="display: flex; justify-content: center;">
+  <div class="button-wrapper">
+    <button onclick="changeTabTitle();" class="console-button">Set Title</button>
+    <button onclick="changeTabIcon();" class="console-button">Set Icon</button>
+    <button onclick="resetTabSettings();" class="console-button">Uncloak</button>
+  </div>
+</div>
       <div class="examples">
         <h4>Presets:</h4>
         <p><b>Google Search: </b><button onclick="applyUrl('https://storage.googleapis.com/operating-anagram-8280/favicon-32x32.png', 'Math pratice - Google Search');">Apply</button></p>
