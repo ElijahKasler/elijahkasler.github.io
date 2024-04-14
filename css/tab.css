@@ -27,12 +27,12 @@ input {
 
 .console-container {
   font-family: "Montserrat", sans-serif;
-  width: 85%;
+  width: 100%;
   margin-bottom: 10vh;
 }
 
 .console {
-  width: 85%;
+  width: 100%;
   box-sizing: border-box;
   margin: auto;
   overflow: hidden;
@@ -40,7 +40,7 @@ input {
 }
 
 .console-input {
-  width: 85%
+  width: 100%
   padding-bottom: 15%;
   font-family: "Montserrat", sans-serif;
 }
