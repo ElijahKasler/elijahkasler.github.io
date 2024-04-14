@@ -11,42 +11,41 @@
   <link rel="icon" href="/favicon.ico" />
   <link rel="stylesheet" href="/css/projects.css" />
   <style>
-    .console-container {
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    .console {
+      width: 100%;
+      height: 100%;
+    }
+
+    .consolebody {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh; /* Center vertically */
-    }
-
-    .console {
-      width: 100%; /* Set console width to 90% of the viewport */
-    }
-
-    .examples {
-      text-align: center; /* Center justify presets */
+      height: 100%;
     }
 
     .console-input input {
-      width: calc(100% - 30px); /* Adjust width */
+      width: calc(100% - 30px);
     }
   </style>
 </head>
 <body>
-  <h1 id="title" class="text-center">Settings</h1>
-  <p class="text-center" id="message">
-    Here you can configure the site to your needs.
-  </p>
-  <div class="console-container">
-    <div class="console">
-       <div class="text-center">
-      <div class="consolebody">
-        <p>Enter a new tab title or a image URL below. Whatever you set will be used all over the site.</p>
-        <p class="console-input">> <input id="userinput" type="url" pattern="https://.*" placeholder="Enter a title or image URL" autocomplete="on" autofocus /></p>
-        <p>Output: <span id="console-output"></span></p>
-      </div>
+  <div class="console">
+    <h1 id="title" class="text-center">Settings</h1>
+    <p class="text-center" id="message">
+      Here you can configure the site to your needs.
+    </p>
+    <div class="consolebody">
+      <p>Enter a new tab title or an image URL below. Whatever you set will be used all over the site.</p>
+      <p class="console-input">> <input id="userinput" type="url" pattern="https://.*" placeholder="Enter a title or image URL" autocomplete="on" autofocus /></p>
+      <p>Output: <span id="console-output"></span></p>
     </div>
-</div>
     <div style="display: flex; justify-content: center;">
       <div class="button-wrapper">
         <button onclick="changeTabTitle();" class="console-button">Set Title</button>
@@ -57,7 +56,7 @@
     <div style="display: flex; justify-content: center;">
       <div class="examples">
         <h4>Presets:</h4>
-        <p><b>Google Search: </b><button onclick="applyUrl('https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png', 'Math pratice - Google Search');">Apply</button></p>
+        <p><b>Google Search: </b><button onclick="applyUrl('https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png', 'Math practice - Google Search');">Apply</button></p>
         <p><b>Google Classroom: </b><button onclick="applyUrl('https://ssl.gstatic.com/classroom/favicon.png', 'Classes');">Apply</button></p>
         <p><b>Google Docs: </b><button onclick="applyUrl('https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico', 'Class notes - Google Docs');">Apply</button></p>
         <p><b>Google Drive: </b><button onclick="applyUrl('https://ssl.gstatic.com/images/branding/product/2x/hh_drive_36dp.png', 'My Drive - Google Drive');">Apply</button></p>
