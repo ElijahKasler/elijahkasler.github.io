@@ -150,4 +150,18 @@ a {
   margin-top: 20px;
   margin-bottom: 20px; /* Add some bottom margin for spacing */
 }
+.console {
+  width: 100%;
+  box-sizing: border-box;
+  margin: auto;
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+}
+
+.x-box {
+  border: 2px solid black;
+  display: inline-block;
+  padding: 5px;
+}
+
 
