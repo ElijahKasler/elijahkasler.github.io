@@ -20,18 +20,8 @@
     }
 
     .console {
-      width: 80%; /* Adjust console width as needed */
-      max-width: 400px; /* Limit console width */
-    }
-
-    .button-wrapper {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px; /* Adjust spacing */
-    }
-
-    .console-button {
-      margin: 0 10px; /* Adjust button spacing */
+      width: 90%; /* Set console width to 90% of the viewport */
+      max-width: 600px; /* Limit maximum width */
     }
 
     .examples {
@@ -56,18 +46,22 @@
         <p>Output: <span id="console-output"></span></p>
       </div>
     </div>
-    <div class="button-wrapper">
-      <button onclick="changeTabTitle();" class="console-button">Set Title</button>
-      <button onclick="changeTabIcon();" class="console-button">Set Icon</button>
-      <button onclick="resetTabSettings();" class="console-button">Uncloak</button>
+    <div style="display: flex; justify-content: center;">
+      <div class="button-wrapper">
+        <button onclick="changeTabTitle();" class="console-button">Set Title</button>
+        <button onclick="changeTabIcon();" class="console-button">Set Icon</button>
+        <button onclick="resetTabSettings();" class="console-button">Uncloak</button>
+      </div>
     </div>
-    <div class="examples">
-      <h4>Presets:</h4>
-      <p><b>Google Search: </b><button onclick="applyUrl('https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png', 'Math pratice - Google Search');">Apply</button></p>
-      <p><b>Google Classroom: </b><button onclick="applyUrl('https://ssl.gstatic.com/classroom/favicon.png', 'Classes');">Apply</button></p>
-      <p><b>Google Docs: </b><button onclick="applyUrl('https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico', 'Class notes - Google Docs');">Apply</button></p>
-      <p><b>Google Drive: </b><button onclick="applyUrl('https://ssl.gstatic.com/images/branding/product/2x/hh_drive_36dp.png', 'My Drive - Google Drive');">Apply</button></p>
-      <p><b>Schoology: </b><button onclick="applyUrl('https://asset-cdn.schoology.com/sites/all/themes/schoology_theme/favicon.ico', 'Home | Schoology');">Apply</button></p>
+    <div style="display: flex; justify-content: center;">
+      <div class="examples">
+        <h4>Presets:</h4>
+        <p><b>Google Search: </b><button onclick="applyUrl('https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png', 'Math pratice - Google Search');">Apply</button></p>
+        <p><b>Google Classroom: </b><button onclick="applyUrl('https://ssl.gstatic.com/classroom/favicon.png', 'Classes');">Apply</button></p>
+        <p><b>Google Docs: </b><button onclick="applyUrl('https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico', 'Class notes - Google Docs');">Apply</button></p>
+        <p><b>Google Drive: </b><button onclick="applyUrl('https://ssl.gstatic.com/images/branding/product/2x/hh_drive_36dp.png', 'My Drive - Google Drive');">Apply</button></p>
+        <p><b>Schoology: </b><button onclick="applyUrl('https://asset-cdn.schoology.com/sites/all/themes/schoology_theme/favicon.ico', 'Home | Schoology');">Apply</button></p>
+      </div>
     </div>
     <script src="/js/tab.js"></script>
     <script src="/js/main.js"></script>
