@@ -35,11 +35,6 @@
     "title": "Road of The Dead"
   },
   {
-    "link": "projects/road-of-the-dead-2/index.html",
-    "imgSrc": "projects/road-of-the-dead-2/favicon.ico",
-    "title": "Road of The Dead 2"
-  },
-  {
     "link": "projects/2048/index.html",
     "imgSrc": "projects/2048/thumb.png",
     "title": "2048"
