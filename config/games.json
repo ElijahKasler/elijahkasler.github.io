@@ -20,6 +20,26 @@
     "title": "Just Fall"
   },
   {
+    "link": "projects/Bitlife/Bitlife.html",
+    "imgSrc": "projects/Bitlife/favicon.ico",
+    "title": "Bitlife"
+  },
+  {
+    "link": "projects/eggy-car/index.html",
+    "imgSrc": "projects/eggy-car/favicon.ico",
+    "title": "Eggy Car"
+  },
+  {
+    "link": "projects/road-of-the-dead/index.html",
+    "imgSrc": "projects/road-of-the-dead/favicon.ico",
+    "title": "Road of The Dead"
+  },
+  {
+    "link": "projects/road-of-the-dead-2/index.html",
+    "imgSrc": "projects/road-of-the-dead-2/favicon.ico",
+    "title": "Road of The Dead 2"
+  },
+  {
     "link": "projects/2048/index.html",
     "imgSrc": "projects/2048/thumb.png",
     "title": "2048"
@@ -563,6 +583,11 @@
     "link": "projects/superhot/index.html",
     "imgSrc": "projects/superhot/hot.jpg",
     "title": "Superhot"
+  },
+  {
+    "link": "projects/super-hot-2/index.html",
+    "imgSrc": "projects/super-hot-2/hot.png",
+    "title": "Superhot 2"
   },
   {
     "link": "projects/swerve/index.html",
