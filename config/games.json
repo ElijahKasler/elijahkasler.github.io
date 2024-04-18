@@ -35,11 +35,6 @@
     "title": "Achievement Unlocked"
   },
   {
-    "link": "projects/adrenalinechallenge/index.html",
-    "imgSrc": "projects/adrenalinechallenge/adrenalinechallenge.jpg",
-    "title": "Adrenaline Challenge"
-  },
-  {
     "link": "projects/among-us/index.html",
     "imgSrc": "projects/among-us/red.png",
     "title": "Among Us"
