@@ -1,12 +1,12 @@
 [
-    {
-      "link": "settings.html",
-      "imgSrc": "settings.ico",
-      "title": "Settings"
-    },
-    {
-        "link": "more-games.html",
-        "imgSrc": "one-more.ico",
-        "title": "More Games"
-    },
-]    
+  {
+    "link": "projects/1/index.html",
+    "imgSrc": "projects/1/meta/apple-touch-icon.png",
+    "title": "1"
+  },
+  {
+    "link": "projects/1v1space/index.html",
+    "imgSrc": "projects/1v1space/splash.png",
+    "title": "1v1.space"
+  }
+]
