@@ -325,11 +325,6 @@
     "title": "Hextris"
   },
   {
-    "link": "projects/idle-breakout/index.html",
-    "imgSrc": "projects/idle-breakout/img/thumbnail.png",
-    "title": "Idle Breakout"
-  },
-  {
     "link": "projects/idle-shark/index.html",
     "imgSrc": "projects/idle-shark/img/sharkgame.png",
     "title": "Idle Shark"
