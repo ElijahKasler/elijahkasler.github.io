@@ -1,0 +1,12 @@
+[
+    {
+      "link": "settings.html",
+      "imgSrc": "settings.ico",
+      "title": "Settings"
+    },
+    {
+        "link": "more-games.html",
+        "imgSrc": "one-more.ico",
+        "title": "More Games"
+    },
+]    
