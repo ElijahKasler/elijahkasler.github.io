@@ -1,6 +1,6 @@
 [
   {
-    "link": "projects/1v1-Old-Old/index.html",
+    "link": "projects/1v1-Old-Old/1v1.html",
     "imgSrc": "projects/1v1-Old-Old/favicon.ico",
     "title": "1v1 Old Old"
   },
@@ -10,13 +10,13 @@
     "title": "1v1 Old"
   },
   {
-    "link": "projects/1v1-New/index.html",
+    "link": "projects/1v1-New/1v1.html",
     "imgSrc": "projects/1v1-New/favicon.ico",
     "title": "1v1 New"
   },
   {
-    "link": "projects/Just-Fall/index.html",
-    "imgSrc": "projects/Just-Fall/favicon.ico",
+    "link": "projects/just-fall/index.html",
+    "imgSrc": "projects/just-fall/favicon.ico",
     "title": "Just Fall"
   },
   {
