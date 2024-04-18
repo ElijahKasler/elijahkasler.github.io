@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>Settings | Scott</title>
+    <title>Projects | Scott</title>
     <meta name="keywords" content="front-end web developer, unblocked, games, google sites, unblocked games mom, ublocked, code, coding, programmer, development, javascript, jquery, bootstrap, sass, less, git" />
     <meta property="og:title" content="Welcome to 3kh0 lite, a lightweight, fast, and clean game site." />
     <meta property="og:site_name" content="3kh0.github.io" />
@@ -93,7 +93,7 @@
     <button id="back-to-top" style="display: none; position: fixed; bottom: 20px; right: 20px;">Back to top</button>
     <script>
       let games = [];
-      fetch("config/settings.json")
+      fetch("config/games.json")
       .then((response) => response.json())
       .then((data) => {
         games = data;
