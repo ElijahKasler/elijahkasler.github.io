@@ -693,5 +693,15 @@
     "link": "projects/Slither/index.html",
     "imgSrc": "projects/Slither/favicon.ico",
     "title": "Slither Io"
+  },
+  {
+    "link": "projects/papas-frezeria/index.html",
+    "imgSrc": "projects/papas-frezeria/favicon.ico",
+    "title": "Papas Frezeria"
+  },
+  {
+    "link": "projects/recoil/index.html",
+    "imgSrc": "projects/recoil/favicon.ico",
+    "title": "Recoil"
   }
 ]
