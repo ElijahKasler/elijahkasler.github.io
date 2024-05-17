@@ -1,8 +1,33 @@
 [
   {
-    "link": "projects/1v1-Old-Old/index.html",
+    "link": "projects/1v1-Old-Old/1v1.html",
     "imgSrc": "projects/1v1-Old-Old/favicon.ico",
     "title": "1v1 Old Old"
+  },
+  {
+    "link": "projects/1v1-Old/index.html",
+    "imgSrc": "projects/1v1-Old/favicon.ico",
+    "title": "1v1 Old"
+  },
+  {
+    "link": "projects/1v1-New/1v1.html",
+    "imgSrc": "projects/1v1-Old-Old/favicon.ico",
+    "title": "1v1 New"
+  },
+  {
+    "link": "projects/just-fall/index.html",
+    "imgSrc": "projects/just-fall/favicon.ico",
+    "title": "Just Fall"
+  },
+  {
+    "link": "projects/Bitlife/Bitlife.html",
+    "imgSrc": "projects/Bitlife/favicon.ico",
+    "title": "Bitlife"
+  },
+  {
+    "link": "projects/eggy-car/index.html",
+    "imgSrc": "projects/eggy-car/favicon.ico",
+    "title": "Eggy Car"
   },
   {
     "link": "projects/achievementunlocked/index.html",
