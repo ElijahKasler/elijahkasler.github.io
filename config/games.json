@@ -430,11 +430,6 @@
     "title": "Pandemic 2"
   },
   {
-    "link": "projects/papaspizzaria/index.html",
-    "imgSrc": "projects/papaspizzaria/papaspizzaria.jpg",
-    "title": "Papa's Pizzaria"
-  },
-  {
     "link": "projects/paperio2/index.html",
     "imgSrc": "projects/paperio2/images/icon512.png",
     "title": "Paper.io 2"
@@ -565,6 +560,11 @@
     "title": "Superhot"
   },
   {
+    "link": "projects/super-hot-2/index.html",
+    "imgSrc": "projects/super-hot-2/hot.png",
+    "title": "Superhot 2"
+  },
+  {
     "link": "projects/swerve/index.html",
     "imgSrc": "projects/swerve/img/favicon.jpg",
     "title": "Swerve"
@@ -683,5 +683,15 @@
     "link": "projects/you-are-bezos/index.html",
     "imgSrc": "projects/you-are-bezos/img/banner.png",
     "title": "You Are Jeff Bezos"
+  },
+  {
+    "link": "projects/theme-hotel/index.html",
+    "imgSrc": "projects/theme-hotel/game.png",
+    "title": "Theme Hotel"
+  },
+  {
+    "link": "projects/Slither/index.html",
+    "imgSrc": "projects/Slither/favicon.ico",
+    "title": "Slither Io"
   }
 ]
