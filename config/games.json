@@ -708,5 +708,10 @@
     "link": "projects/theme-hotel/index.html",
     "imgSrc": "projects/theme-hotel/game.png",
     "title": "Theme Hotel"
+  },
+  {
+    "link": "projects/Slither/index.html",
+    "imgSrc": "projects/Slither/favicon.ico",
+    "title": "Slither Io"
   }
 ]
