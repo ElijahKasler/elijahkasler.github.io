@@ -1,33 +1,13 @@
 [
   {
-    "link": "projects/1/index.html",
-    "imgSrc": "projects/1/meta/apple-touch-icon.png",
-    "title": "1"
-  },
-  {
-    "link": "projects/1v1space/index.html",
-    "imgSrc": "projects/1v1space/splash.png",
-    "title": "1v1.space"
-  },
-  {
-    "link": "projects/2048/index.html",
-    "imgSrc": "projects/2048/thumb.png",
-    "title": "2048"
-  },
-  {
-    "link": "projects/9007199254740992/index.html",
-    "imgSrc": "projects/9007199254740992/logo-4.png",
-    "title": "9007199254740992"
+    "link": "projects/1v1-Old-Old/index.html",
+    "imgSrc": "projects/1v1-Old-Old/favicon.ico",
+    "title": "1v1 Old Old"
   },
   {
     "link": "projects/achievementunlocked/index.html",
     "imgSrc": "projects/achievementunlocked/achievementunlocked.png",
     "title": "Achievement Unlocked"
-  },
-  {
-    "link": "projects/adrenalinechallenge/index.html",
-    "imgSrc": "projects/adrenalinechallenge/adrenalinechallenge.jpg",
-    "title": "Adrenaline Challenge"
   },
   {
     "link": "projects/among-us/index.html",
@@ -205,39 +185,14 @@
     "title": "Doodle Jump"
   },
   {
-    "link": "projects/doublewires/index.html",
-    "imgSrc": "projects/doublewires/doublewires.png",
-    "title": "Double Wires"
-  },
-  {
     "link": "projects/draw-the-hill/index.html",
     "imgSrc": "projects/draw-the-hill/icons/icon-512.png",
     "title": "Draw the Hill"
   },
   {
-    "link": "projects/ducklife1/index.html",
-    "imgSrc": "projects/ducklife1/ducklife.png",
-    "title": "Duck Life"
-  },
-  {
-    "link": "projects/ducklife2/index.html",
-    "imgSrc": "projects/ducklife2/ducklife2.png",
-    "title": "Duck Life 2"
-  },
-  {
-    "link": "projects/ducklife3/index.html",
-    "imgSrc": "projects/ducklife3/duck.png",
-    "title": "Duck Life 3"
-  },
-  {
     "link": "projects/edgenotfound/index.html",
     "imgSrc": "projects/edgenotfound/edge.png",
     "title": "Edge Not Found"
-  },
-  {
-    "link": "projects/elasticman/index.html",
-    "imgSrc": "projects/elasticman/elasticman.jpg",
-    "title": "Elastic Man"
   },
   {
     "link": "projects/endlesswar3/index.html",
@@ -345,11 +300,6 @@
     "title": "Hextris"
   },
   {
-    "link": "projects/idle-breakout/index.html",
-    "imgSrc": "projects/idle-breakout/img/thumbnail.png",
-    "title": "Idle Breakout"
-  },
-  {
     "link": "projects/idle-shark/index.html",
     "imgSrc": "projects/idle-shark/img/sharkgame.png",
     "title": "Idle Shark"
@@ -375,11 +325,6 @@
     "title": "Kitten Cannon"
   },
   {
-    "link": "projects/krunker/index.html",
-    "imgSrc": "projects/krunker/img/krunker-io.jpg",
-    "title": "Krunker"
-  },
-  {
     "link": "projects/learntofly/index.html",
     "imgSrc": "projects/learntofly/learntofly.png",
     "title": "Learn To Fly"
@@ -398,16 +343,6 @@
     "link": "projects/meme2048/index.html",
     "imgSrc": "projects/meme2048/img/rickroll.gif",
     "title": "Meme 2048"
-  },
-  {
-    "link": "projects/minecraft/index.html",
-    "imgSrc": "projects/minecraft/splash.jpeg",
-    "title": "Eaglercraft"
-  },
-  {
-    "link": "projects/minecraft-classic/index.html",
-    "imgSrc": "projects/minecraft-classic/pack.png",
-    "title": "Minecraft Classic"
   },
   {
     "link": "projects/minesweeper/index.html",
@@ -493,11 +428,6 @@
     "link": "projects/portalflash/index.html",
     "imgSrc": "projects/portalflash/portaltheflashversion.jpg",
     "title": "Portal (Flash)"
-  },
-  {
-    "link": "projects/precision-client/index.html",
-    "imgSrc": "projects/precision-client/logo.png",
-    "title": "Precision Client (Eaglercraft)"
   },
   {
     "link": "projects/push-the-square/index.html",
