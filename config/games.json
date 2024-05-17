@@ -703,5 +703,10 @@
     "link": "projects/you-are-bezos/index.html",
     "imgSrc": "projects/you-are-bezos/img/banner.png",
     "title": "You Are Jeff Bezos"
+  },
+  {
+    "link": "projects/theme-hotel/index.html",
+    "imgSrc": "projects/theme-hotel/game.png",
+    "title": "Theme Hotel"
   }
 ]
