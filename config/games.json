@@ -708,5 +708,10 @@
     "link": "projects/recoil/index.html",
     "imgSrc": "projects/recoil/recoil.png",
     "title": "Recoil"
+  },
+  {
+    "link": "projects/wheely/index.html",
+    "imgSrc": "projects/wheely/favicon.ico",
+    "title": "Wheely"
   }
 ]
