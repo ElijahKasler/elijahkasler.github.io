@@ -135,6 +135,11 @@
     "title": "circlO"
   },
   {
+    "link": "projects/circlo-2/index.html",
+    "imgSrc": "projects/circlo-2/favicon.ico",
+    "title": "circl0 2"
+  },
+  {
     "link": "projects/connect3/index.html",
     "imgSrc": "projects/connect3/connect3.png",
     "title": "Connect 3"
