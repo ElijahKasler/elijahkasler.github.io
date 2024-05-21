@@ -713,5 +713,10 @@
     "link": "projects/wheely/index.html",
     "imgSrc": "projects/wheely/favicon.ico",
     "title": "Wheely"
+  },
+  {
+    "link": "projects/car-drawing/index.html",
+    "imgSrc": "projects/car-drawing/favicon.ico",
+    "title": "Car Drawing"
   }
 ]
