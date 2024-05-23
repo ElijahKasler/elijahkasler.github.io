@@ -708,5 +708,40 @@
     "link": "projects/recoil/index.html",
     "imgSrc": "projects/recoil/recoil.png",
     "title": "Recoil"
+  },
+  {
+    "link": "projects/wheely/index.html",
+    "imgSrc": "projects/wheely/favicon.ico",
+    "title": "Wheely"
+  },
+  {
+    "link": "projects/car-drawing/index.html",
+    "imgSrc": "projects/car-drawing/favicon.ico",
+    "title": "Car Drawing"
+  },
+  {
+    "link": "projects/yohoho/index.html",
+    "imgSrc": "projects/yohoho/favicon.ico",
+    "title": "Yohoho Io"
+  },
+  {
+    "link": "projects/minecraft/1.5.2.html",
+    "imgSrc": "projects/minecraft/1.5.2.png",
+    "title": "Eaglercraft 1.5.2"
+  },
+  {
+    "link": "projects/minecraft/1.8.8.html",
+    "imgSrc": "projects/minecraft/1.8.8.png",
+    "title": "Eaglercraft 1.8.8"
+  },
+  {
+    "link": "projects/only-up/index.html",
+    "imgSrc": "projects/only-up/favicon.ico",
+    "title": "Only Up"
+  },
+  {
+    "link": "projects/pacman/index.html",
+    "imgSrc": "projects/pacman/favicon.ico",
+    "title": "Pacman"
   }
 ]
