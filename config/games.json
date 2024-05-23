@@ -738,5 +738,10 @@
     "link": "projects/only-up/index.html",
     "imgSrc": "projects/only-up/favicon.ico",
     "title": "Only Up"
+  },
+  {
+    "link": "projects/pacman/index.html",
+    "imgSrc": "projects/pacman/favicon.ico",
+    "title": "Pacman"
   }
 ]
