@@ -733,5 +733,10 @@
     "link": "projects/minecraft/1.8.8.html",
     "imgSrc": "projects/minecraft/1.8.8.png",
     "title": "Eaglercraft 1.8.8"
+  },
+  {
+    "link": "projects/only-up/index.html",
+    "imgSrc": "projects/only-up/favicon.ico",
+    "title": "Only Up"
   }
 ]
