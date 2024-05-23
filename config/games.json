@@ -718,5 +718,10 @@
     "link": "projects/car-drawing/index.html",
     "imgSrc": "projects/car-drawing/favicon.ico",
     "title": "Car Drawing"
+  },
+  {
+    "link": "projects/yohoho/index.html",
+    "imgSrc": "projects/yohoho/favicon.ico",
+    "title": "Yohoho Io"
   }
 ]
