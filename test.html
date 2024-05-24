@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Projects | Scott</title>
+    <meta name="keywords" content="front-end web developer, unblocked, games, google sites, unblocked games mom, ublocked, code, coding, programmer, development, javascript, jquery, bootstrap, sass, less, git" />
+    <meta property="og:title" content="Welcome to 3kh0 lite, a lightweight, fast, and clean game site." />
+    <meta property="og:site_name" content="3kh0.github.io" />
+    <meta property="og:description" content="Welcome to 3kh0 lite, a lightweight, fast, and clean game site." />
+    <meta name="description" content="Welcome to 3kh0 lite, a lightweight, fast, and clean game site." />
+    <meta name="author" content="3kh0" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="shortcut-icon" href="/favicon.ico" />
+    <script src="/js/main.js"></script>
+    <style>
+      p {
+        text-align: center;
+        max-width: 600px;
+        margin: 20px auto;
+      }
+      button {
+        cursor: pointer;
+        background-color: #22c55e;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 20px;
+        margin-top: 20px;
+      }
+      .game-link {
+        height: 400px;
+        width: 300px;
+        text-decoration: none;
+      }
+      .game-tile {
+        background-color: #949494;
+        height: 400px;
+        width: 300px;
+        border-radius: 30px;
+      }
+      .game-icon {
+        border-radius: 30px;
+        width: 300px;
+        height: 300px;
+      }
+      .game-title {
+        font-size: 30px;
+        font-weight: bold;
+        color: #000000;
+        text-align: center;
+        margin: auto;
+      }
+      .flex-container {
+        display: flex;
+        flex-direction: row;
+        order: 0;
+        flex-grow: 0;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+      }
+      .container {
+        padding: 10px;
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body style="background-color: #121212; color: #ffffff; font-family: sans-serif; text-decoration: none; text-align: center;">
+    <h1 style="font-size: 3em; text-align: center;">Projects</h1>
+    <p class="text-center">
+      <a href="more.html" style="text-decoration: none;">
+        <button style="cursor: pointer; background-color: #b625cc; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border-radius: 20px; margin-top: 5px;">
+          Settings
+        </button>
+      </a>
+    </p>
+    <input type="text" id="search" onkeyup="searchGames()" placeholder="Search for games..." style="width: 100%; font-size: 18px; padding: 6px 20px; margin: auto; border-radius: 30px; max-width: 600px; margin-bottom: 10px;" />
+    <div id="loader" style="display: block; border: 16px solid #f3f3f3; border-top: 16px solid #3498db; border-radius: 50%; width: 120px; height: 120px; animation: spin 2s linear infinite; margin: auto; margin-top: 1rem;"></div>
+    <div id="game-container" class="flex-container"></div>
+  
+    <button id="back-to-top" style="display: none; position: fixed; bottom: 20px; right: 20px;">Back to top</button>
+    <script>
+      let games = [];
+      fetch("config/games.json")
+      .then((response) => response.json())
+      .then((data) => {
+        games = data;
+        const container = document.getElementById("game-container");
+        data.forEach((project) => {
+          const game = document.createElement("a");
+          game.href = project.link;
+            game.className = "game-link container";
+            game.innerHTML = `
+            <div class="game-tile">
+              <img class="game-icon" src="${project.imgSrc}" alt="icon" />
+              <p class="game-title">${project.title}</p>
+              </div>`;
+              container.appendChild(game);
+          });
+          document.getElementById("loader").style.display = "none";
+        })
+        .catch((error) => console.error("Error:", error));
+
+      function searchGames() {
+        const input = document.getElementById("search");
+        const filter = input.value.toUpperCase();
+        const container = document.getElementById("game-container");
+        container.innerHTML = "";
+        games
+          .filter((game) => game.title.toUpperCase().includes(filter))
+          .forEach((project) => {
+            const game = document.createElement("a");
+            game.href = project.link;
+            game.className = "game-link container";
+            game.innerHTML = `
+            <div class="game-tile">
+              <img class="game-icon" src="${project.imgSrc}" alt="icon" loading="lazy" />
+              <p class="game-title">${project.title}</p>
+              </div>`;
+            container.appendChild(game);
+          });
+        }
+        const backToTopButton = document.getElementById('back-to-top');
+        window.onscroll = function () {
+          if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            backToTopButton.style.display = "block";
+          } else {
+          backToTopButton.style.display = "none";
+        }
+      };
+
+      backToTopButton.onclick = function () {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      };
+    </script>
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+<style>
+      body {
+        background-color: #121212;
+        color: #ffffff;
+        font-family: sans-serif;
+        text-decoration: none;
+        text-align: center;
+      }
+      p {
+        text-align: center;
+        max-width: 600px;
+        margin: 20px auto;
+      }
+      button {
+        cursor: pointer;
+        background-color: #22c55e;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 20px;
+        margin-top: 20px;
+      }
+      #secretPopup {
+        display: none;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        padding: 20px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        z-index: 1000;
+        color: #000000;
+        cursor: move;
+      }
+      #passwordInput {
+        display: block;
+        margin-bottom: 10px;
+        width: calc(100% - 20px);
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+      }
+      .unlockButton {
+        background-color: #22c55e;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        font-size: 16px;
+        border-radius: 10px;
+        margin: 5px 0;
+        width: calc(100% - 40px);
+      }
+      #errorMessage {
+        color: red;
+        display: none;
+        margin-top: 10px;
+      }
+      #developerSettings {
+        display: none;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+    </style>
+</head>
+<body>
+    <div id="secretPopup">
+        <div id="passwordContainer">
+            <label for="passwordInput">Enter Password:</label>
+            <input type="password" id="passwordInput" placeholder="Password">
+            <button id="unlockButton">Unlock</button>
+            <p id="errorMessage">Incorrect password. Please try again.</p>
+        </div>
+        <div id="extraButtons" style="display: none;">
+            <p id="developerSettings">Developer Settings</p>
+<button class="button" id="extraButton1">Auto Clicker</button>
+        </div>
+    </div>
+<script>
+document.getElementById('extraButton1').addEventListener('click', function() {
+    var DELAY = 1;var autoClickerStyleElement = document.createElement("style");autoClickerStyleElement.innerHTML="*{cursor: crosshair !important;}";document.body.appendChild(autoClickerStyleElement);function addClicker(e) {if(!e.isTrusted) {return;}if(e.target.classList.contains("auto-clicker-target")) {e.target.classList.remove("auto-clicker-target");} else {e.target.classList.add("auto-clicker-target");}document.body.removeChild(autoClickerStyleElement);document.body.removeEventListener("click", addClicker);e.preventDefault();autoClick(e.target);}function autoClick(element) {if(element.classList.contains("auto-clicker-target")) {element.click();setTimeout(function(){ autoClick(element); }, DELAY);}}document.body.addEventListener("click", addClicker, 0);
+});
+</script>
+    <script>
+        const encodedPassword = 'NTM3MjQ5MzI=';
+        const correctPassword = atob(encodedPassword);
+        
+        let keySequence = [];
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && keySequence.length > 0) {
+                keySequence = []; // Reset sequence if Escape key is pressed
+            }
+            keySequence.push(event.key);
+            if (keySequence.length > 3) keySequence.shift();
+            if (keySequence.toString() === ['ArrowUp', 'ArrowDown', '1'].toString()) {
+                const popup = document.getElementById('secretPopup');
+                popup.style.display = 'block';
+            } else if (keySequence.toString() === ['Escape', '1'].toString()) {
+                hideMenu();
+            }
+        });
+
+        document.getElementById('unlockButton').addEventListener('click', function() {
+            const passwordInput = document.getElementById('passwordInput').value;
+            const errorMessage = document.getElementById('errorMessage');
+            const passwordContainer = document.getElementById('passwordContainer');
+            const extraButtons = document.getElementById('extraButtons');
+            const developerSettings = document.getElementById('developerSettings');
+            
+            if (passwordInput === correctPassword) {
+                alert('Access granted!');
+                passwordContainer.style.display = 'none';
+                errorMessage.style.display = 'none';
+                developerSettings.style.display = 'block';
+                extraButtons.style.display = 'block';
+            } else {
+                errorMessage.style.display = 'block';
+            }
+        });
+
+        // Draggable Popup
+        const popup = document.getElementById('secretPopup');
+        let isDragging = false;
+        let offsetX, offsetY;
+
+        popup.addEventListener('mousedown', function(e) {
+            isDragging = true;
+            offsetX = e.clientX - popup.getBoundingClientRect().left;
+            offsetY = e.clientY - popup.getBoundingClientRect().top;
+        });
+
+        document.addEventListener('mousemove', function(e) {
+            if (isDragging) {
+                popup.style.left = `${e.clientX - offsetX}px`;
+                popup.style.top = `${e.clientY - offsetY}px`;
+            }
+        });
+
+        document.addEventListener('mouseup', function() {
+            isDragging = false;
+        });
+
+        function hideMenu() {
+            const popup = document.getElementById('secretPopup');
+            popup.style.display = 'none';
+        }
+    </script>
+</body>
+
+  </body>
+</html>
