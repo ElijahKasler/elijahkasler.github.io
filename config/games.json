@@ -743,5 +743,10 @@
     "link": "projects/pacman/index.html",
     "imgSrc": "projects/pacman/favicon.ico",
     "title": "Pacman"
+  },
+  {
+    "link": "projects/subway/index.html",
+    "imgSrc": "projects/subway/favicon.ico",
+    "title": "Subway Surfers"
   }
 ]
