@@ -748,5 +748,10 @@
     "link": "projects/subway/index.html",
     "imgSrc": "projects/subway/favicon.ico",
     "title": "Subway Surfers"
+  },
+  {
+    "link": "projects/mma/index.html",
+    "imgSrc": "projects/mma/favicon.ico",
+    "title": "Mixed Macho Arts"
   }
 ]
