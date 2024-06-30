@@ -1,4 +1,4 @@
- function get_information(link, callback) {
+   function get_information(link, callback) {
         var xhr = new XMLHttpRequest();
         xhr.open("GET", link, true);
         xhr.onreadystatechange = function() {
