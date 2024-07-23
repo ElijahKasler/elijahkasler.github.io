@@ -162,24 +162,16 @@
           this.classList.add('logout');
           document.getElementById('auth-text').textContent = 'Logout';
           
-          // Redirect to login page with query parameter
-          window.location.href = 'https://iwishyouamerrynewyear.vercel.app/google/login.html?returnUrl=' + encodeURIComponent(window.location.href);
+          // Redirect to login page
+          setTimeout(() => {
+            window.location.href = 'https://iwishyouamerrynewyear.vercel.app/google/login.html';
+            localStorage.setItem('isLoggedIn', 'true'); // Simulate login
+          }, 1);
         }
       });
 
-      // Check URL for a state change query parameter
-      document.addEventListener('DOMContentLoaded', function() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const returnUrl = urlParams.get('returnUrl');
-
-        if (returnUrl) {
-          // Update button state after returning
-          updateButtonState();
-          
-          // Clear the returnUrl parameter from the URL
-          history.replaceState(null, '', window.location.pathname);
-        }
-      });
+      // Initialize button state on page load
+      document.addEventListener('DOMContentLoaded', updateButtonState);
 
       let games = [];
       fetch("config/games.json")
@@ -190,17 +182,17 @@
         data.forEach((project) => {
           const game = document.createElement("a");
           game.href = project.link;
-          game.className = "game-link container";
-          game.innerHTML = `
-          <div class="game-tile">
-            <img class="game-icon" src="${project.imgSrc}" alt="icon" loading="lazy" />
-            <p class="game-title">${project.title}</p>
-            </div>`;
-          container.appendChild(game);
-        });
-        document.getElementById("loader").style.display = "none";
-      })
-      .catch((error) => console.error("Error:", error));
+            game.className = "game-link container";
+            game.innerHTML = `
+            <div class="game-tile">
+              <img class="game-icon" src="${project.imgSrc}" alt="icon" />
+              <p class="game-title">${project.title}</p>
+              </div>`;
+              container.appendChild(game);
+          });
+          document.getElementById("loader").style.display = "none";
+        })
+        .catch((error) => console.error("Error:", error));
 
       function searchGames() {
         const input = document.getElementById("search");
@@ -220,13 +212,12 @@
               </div>`;
             container.appendChild(game);
           });
-      }
-
-      const backToTopButton = document.getElementById('back-to-top');
-      window.onscroll = function () {
-        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-          backToTopButton.style.display = "block";
-        } else {
+        }
+        const backToTopButton = document.getElementById('back-to-top');
+        window.onscroll = function () {
+          if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            backToTopButton.style.display = "block";
+          } else {
           backToTopButton.style.display = "none";
         }
       };
