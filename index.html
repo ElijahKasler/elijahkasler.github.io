@@ -158,9 +158,6 @@
           localStorage.removeItem('isLoggedIn');
           updateButtonState();
         } else {
-          // Temporarily switch to logout button
-          this.classList.add('logout');
-          document.getElementById('auth-text').textContent = 'Logout';
           
           // Redirect to login page
           setTimeout(() => {
