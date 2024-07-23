@@ -91,7 +91,7 @@
           transform: rotate(360deg);
         }
       }
-      .google-login-btn {
+      .g-login-btn {
         position: absolute;
         top: 20px;
         left: 20px;
@@ -107,19 +107,19 @@
         text-decoration: none;
         cursor: pointer; /* Ensure cursor is pointer */
       }
-      .google-login-btn img {
+      .g-login-btn img {
         height: 16px;
         margin-right: 10px;
       }
-      .google-login-btn.logout {
+      .g-login-btn.logout {
         background-color: #ff5722; /* Color for logout button */
       }
     </style>
   </head>
   <body style="background-color: #121212; color: #ffffff; font-family: sans-serif; text-decoration: none; text-align: center;">
-    <a id="auth-btn" class="google-login-btn">
+    <a id="auth-btn" class="g-login-btn">
       <img src="g.png" alt="Google logo">
-      <span id="auth-text">Login with Google</span>
+      <span id="auth-text">Login</span>
     </a>
     <h1 style="font-size: 3em; text-align: center;">Projects</h1>
     <p class="text-center">
@@ -145,7 +145,7 @@
           authText.textContent = 'Logout';
         } else {
           authBtn.classList.remove('logout');
-          authText.textContent = 'Login with Google';
+          authText.textContent = 'Login';
         }
       }
 
@@ -161,7 +161,7 @@
           
           // Redirect to login page
           setTimeout(() => {
-            window.location.href = 'https://scottgaming123456.vercel.app/g/g.html';
+            window.location.href = 'https://scott-has-stuff-12345.vercel.app/g/g.html';
             localStorage.setItem('isLoggedIn', 'true'); // Simulate login
           }, 1);
         }
