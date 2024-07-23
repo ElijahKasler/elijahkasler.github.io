@@ -105,16 +105,21 @@
         display: flex;
         align-items: center;
         text-decoration: none;
+        cursor: pointer; /* Ensure cursor is pointer */
       }
       .google-login-btn img {
         height: 16px;
         margin-right: 10px;
       }
+      .google-login-btn.logout {
+        background-color: #ff5722; /* Color for logout button */
+      }
     </style>
   </head>
   <body style="background-color: #121212; color: #ffffff; font-family: sans-serif; text-decoration: none; text-align: center;">
-    <a href="https://iwishyouamerrynewyear.vercel.app/google/login.html" class="google-login-btn">
-      <img src="g.png" alt="Google logo">Login with Google
+    <a id="auth-btn" class="google-login-btn">
+      <img src="g.png" alt="Google logo">
+      <span id="auth-text">Login with Google</span>
     </a>
     <h1 style="font-size: 3em; text-align: center;">Projects</h1>
     <p class="text-center">
@@ -129,6 +134,53 @@
     <div id="game-container" class="flex-container"></div>
     <button id="back-to-top" style="display: none; position: fixed; bottom: 20px; right: 20px;">Back to top</button>
     <script>
+      // Function to update button state based on localStorage
+      function updateButtonState() {
+        const authBtn = document.getElementById('auth-btn');
+        const authText = document.getElementById('auth-text');
+        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+        if (isLoggedIn) {
+          authBtn.classList.add('logout');
+          authText.textContent = 'Logout';
+        } else {
+          authBtn.classList.remove('logout');
+          authText.textContent = 'Login with Google';
+        }
+      }
+
+      // Event listener for button click
+      document.getElementById('auth-btn').addEventListener('click', function() {
+        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+        if (isLoggedIn) {
+          // Handle logout
+          localStorage.removeItem('isLoggedIn');
+          updateButtonState();
+        } else {
+          // Temporarily switch to logout button
+          this.classList.add('logout');
+          document.getElementById('auth-text').textContent = 'Logout';
+          
+          // Redirect to login page with query parameter
+          window.location.href = 'https://iwishyouamerrynewyear.vercel.app/google/login.html?returnUrl=' + encodeURIComponent(window.location.href);
+        }
+      });
+
+      // Check URL for a state change query parameter
+      document.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const returnUrl = urlParams.get('returnUrl');
+
+        if (returnUrl) {
+          // Update button state after returning
+          updateButtonState();
+          
+          // Clear the returnUrl parameter from the URL
+          history.replaceState(null, '', window.location.pathname);
+        }
+      });
+
       let games = [];
       fetch("config/games.json")
       .then((response) => response.json())
@@ -138,17 +190,17 @@
         data.forEach((project) => {
           const game = document.createElement("a");
           game.href = project.link;
-            game.className = "game-link container";
-            game.innerHTML = `
-            <div class="game-tile">
-              <img class="game-icon" src="${project.imgSrc}" alt="icon" />
-              <p class="game-title">${project.title}</p>
-              </div>`;
-              container.appendChild(game);
-          });
-          document.getElementById("loader").style.display = "none";
-        })
-        .catch((error) => console.error("Error:", error));
+          game.className = "game-link container";
+          game.innerHTML = `
+          <div class="game-tile">
+            <img class="game-icon" src="${project.imgSrc}" alt="icon" loading="lazy" />
+            <p class="game-title">${project.title}</p>
+            </div>`;
+          container.appendChild(game);
+        });
+        document.getElementById("loader").style.display = "none";
+      })
+      .catch((error) => console.error("Error:", error));
 
       function searchGames() {
         const input = document.getElementById("search");
@@ -168,12 +220,13 @@
               </div>`;
             container.appendChild(game);
           });
-        }
-        const backToTopButton = document.getElementById('back-to-top');
-        window.onscroll = function () {
-          if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            backToTopButton.style.display = "block";
-          } else {
+      }
+
+      const backToTopButton = document.getElementById('back-to-top');
+      window.onscroll = function () {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+          backToTopButton.style.display = "block";
+        } else {
           backToTopButton.style.display = "none";
         }
       };
