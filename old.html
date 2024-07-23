@@ -16,13 +16,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./config.js"></script>
     <script src="./script.js"></script>
-    <link rel="stylesheet" href="src/css/main.min.css">
-    <link href="https://cdn.staticaly.com/gh/hung1001/font-awesome-pro/4cac1a6/css/all.css" rel="stylesheet" type="text/css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
     <style>
       p {
         text-align: center;
@@ -74,11 +67,12 @@
         align-items: center;
         justify-content: center;
       }
-      .header {
-        display: none;
+	  .header {
+        display: none
       }
+
       .map-container {
-        display: none;
+        display: none
       }
       .container {
         padding: 10px;
@@ -91,31 +85,9 @@
           transform: rotate(360deg);
         }
       }
-      .google-login-btn {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        background-color: #db4437; /* Updated background color */
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-      }
-      .google-login-btn img {
-        height: 16px;
-        margin-right: 10px;
-      }
     </style>
   </head>
   <body style="background-color: #121212; color: #ffffff; font-family: sans-serif; text-decoration: none; text-align: center;">
-    <a href="https://iwishyouamerrynewyear.vercel.app/google/login.html" class="google-login-btn">
-      <img src="g.png" alt="Google logo">Login with Google
-    </a>
     <h1 style="font-size: 3em; text-align: center;">Projects</h1>
     <p class="text-center">
       <a href="more.html" style="text-decoration: none;">
@@ -127,6 +99,7 @@
     <input type="text" id="search" onkeyup="searchGames()" placeholder="Search for games..." style="width: 100%; font-size: 18px; padding: 6px 20px; margin: auto; border-radius: 30px; max-width: 600px; margin-bottom: 10px;" />
     <div id="loader" style="display: block; border: 16px solid #f3f3f3; border-top: 16px solid #3498db; border-radius: 50%; width: 120px; height: 120px; animation: spin 2s linear infinite; margin: auto; margin-top: 1rem;"></div>
     <div id="game-container" class="flex-container"></div>
+  
     <button id="back-to-top" style="display: none; position: fixed; bottom: 20px; right: 20px;">Back to top</button>
     <script>
       let games = [];
@@ -183,13 +156,46 @@
         document.documentElement.scrollTop = 0;
       };
     </script>
-    <script>
-      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/insights/script.js"></script>
-    <script>
-      window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/speed-insights/script.js"></script>
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+  </body>
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="src/css/main.min.css">
+    <!-- Fontawesome -->
+    <link href="https://cdn.staticaly.com/gh/hung1001/font-awesome-pro/4cac1a6/css/all.css" rel="stylesheet" type="text/css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <link rel="icon" type="image/x-icon" href="./src/favicon.ico">
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <!-- Notyf CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+  </head>
+  <body>
+    <header class="header"></header>
+    <script src="./config.js"></script>
+    <script src="./script.js"></script>
+    <style>
+      .header {
+        display: none
+      }
+
+      .map-container {
+        display: none
+      }
+    </style>
   </body>
 </html>
