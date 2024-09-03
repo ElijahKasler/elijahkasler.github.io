@@ -89,24 +89,6 @@
             height: 100%;
             border: none;
         }
-
-        #clearCookiesButton {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: #ff4b5c;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            color: white;
-            font-size: 1em;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        #clearCookiesButton:hover {
-            background: #d83b52;
-        }
     </style>
 </head>
 <body onload="checkLoginStatus()">
@@ -118,7 +100,6 @@
     </div>
 
     <div id="content">
-        <button id="clearCookiesButton" onclick="clearCookies()">Clear Login Cookies</button>
         <iframe src="data:text/html;base64,PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KPGhlYWQ+CiAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogIDxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50PSJ3aWR0aD1kZXZpY2Utd2lkdGgsIGluaXRpYWwtc2NhbGU9MS4wIj4KICA8dGl0bGU+TW9vbidzIEV4cGxvaXQ8L3RpdGxlPgogIDxsaW5rIHJlbD0ic2hvcnRjdXQgaWNvbiIgdHlwZT0iaW1hZ2UvcG5nIiBocmVmPSJmYXZpY29uLnBuZyI+CiAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2NzczI/ZmFtaWx5PVZhcmVsYStSb3VuZCZkaXNwbGF5PXN3YXAiPgogIDxzdHlsZT4KICAgIGJvZHkgewogICAgICBmb250LWZhbWlseTogJ1ZhcmVsYSBSb3VuZCcsIHNhbnMtc2VyaWY7CiAgICAgIG1hcmdpbjogMDsKICAgICAgcGFkZGluZzogMDsKICAgICAgYmFja2dyb3VuZC1jb2xvcjogI2Y4ZjlmYTsKICAgICAgY29sb3I6ICMzMzM7CiAgICB9CiAgICBoZWFkZXIgewogICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMzQzYTQwOwogICAgICBjb2xvcjogI2ZmZjsKICAgICAgcGFkZGluZzogMTBweCAyMHB4OwogICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7CiAgICAgIGRpc3BsYXk6IGZsZXg7CiAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7CiAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyOwogICAgICBib3gtc2hhZG93OiAwIDJweCA1cHggcmdiYSgwLCAwLCAwLCAwLjEpOwogICAgfQogICAgLmxvZ28gewogICAgICB3aWR0aDogNTBweDsKICAgICAgaGVpZ2h0OiA1MHB4OwogICAgICBtYXJnaW4tcmlnaHQ6IDEwcHg7CiAgICB9CiAgICAuY29udGFpbmVyIHsKICAgICAgbWF4LXdpZHRoOiA4MDBweDsKICAgICAgbWFyZ2luOiAxNTBweCBhdXRvIDAgYXV0bzsKICAgICAgcGFkZGluZzogMjBweDsKICAgICAgdGV4dC1hbGluOjpjZW50ZXI7CiAgICAgIGJhY2tncm91bmQ6ICNmZmY7CiAgICAgIGJveC1zaGFkb3c6IDAgNHB4IDhweCByZ2JhKDAsIDAsIDAsIDAuMSk7CiAgICB9CiAgICBzZWxlY3QgewogICAgICBmb250LWZhbWlseTogJ1ZhcmVsYSBSb3VuZCcsIHNhbnMtc2VyaWY7CiAgICAgIG1hcmdpbi1ib3R0b206IDEwcHg7CiAgICAgIHBhZGRpbmc6IDEwcHg7CiAgICAgIGZvbnQtc2l6ZTogMTZweDsKICAgICAgYm9yZGVyOiAxcHggc29saWQgI2NlZDRkYTsKICAgICAgYm9yZGVyLXJhZGl1czogNHB4OwogICAgICB3aWR0aDogMTAwJTsKICAgIH0KICAgIGJ1dHRvbiB7CiAgICAgIGZvbnQtZmFtaWx5OiAnVmFyZWxhIFJvdW5kJywgc2Fucy1zZXJpZjsKICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzAwN2JmZjsKICAgICAgY29sb3I6ICNmZmY7CiAgICAgIGJvcmICAgIGJvcmRlcjogbm9uZTsKICAgICAgcGFkZGluZzogMTBweCAyMHB4OwogICAgICBmb250LXNpemU6IDE2cHg7CiAgICAgIGN1cnNvcjogcG9pbnRlcjsKICAgICAgYm9yZGVyLXJhZGl1czogNXB4OwogICAgICBtYXJnaW4tdG9wOiAwOwogICAgICBtYXJnaW4tbGVmdDogMDsKICAgICAgYmFzZTY0LWNvbG9yOiAjZjc2N2MzOwogICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7CiAgICB9CiAgPC9zdHlsZT4KPC9oZWFkPjwvaHRtbD4K" allowfullscreen></iframe>
     </div>
 
@@ -131,40 +112,32 @@
 
             // Check if the login cookie is set
             if (document.cookie.split(';').some(item => item.trim().startsWith('loggedIn='))) {
-                // Cookie found, user is logged in
-                passwordOverlay.classList.add('hidden');
-                content.style.display = 'block';
-            } else {
-                // No cookie, show login overlay
-                passwordOverlay.classList.remove('hidden');
-                content.style.display = 'none';
+                showContent();
             }
         }
 
         function validatePassword() {
-            const passwordInput = document.getElementById('passwordInput').value;
+            const inputPassword = document.getElementById('passwordInput').value;
             const errorMessage = document.getElementById('errorMessage');
-            const passwordOverlay = document.getElementById('passwordOverlay');
-            const content = document.getElementById('content');
 
-            if (passwordInput === correctPassword) {
-                // Set cookie and hide overlay
-                document.cookie = 'loggedIn=true;path=/';
-                passwordOverlay.classList.add('hidden');
-                content.style.display = 'block';
+            if (inputPassword === correctPassword) {
+                // Set a cookie to remember that the user has logged in
+                document.cookie = "loggedIn=true; path=/";
+
+                // Hide the overlay and show the content
+                showContent();
             } else {
                 errorMessage.style.display = 'block';
             }
         }
 
-        function clearCookies() {
-            // Clear login cookie
-            document.cookie = 'loggedIn=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-            // Show overlay again
-            document.getElementById('passwordOverlay').classList.remove('hidden');
-            document.getElementById('content').style.display = 'none';
+        function showContent() {
+            const passwordOverlay = document.getElementById('passwordOverlay');
+            const content = document.getElementById('content');
+
+            passwordOverlay.classList.add('hidden');
+            content.style.display = 'block';
         }
     </script>
 </body>
 </html>
-
