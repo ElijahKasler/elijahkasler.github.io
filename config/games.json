@@ -748,5 +748,10 @@
     "link": "projects/mma/index.html",
     "imgSrc": "projects/mma/favicon.ico",
     "title": "Mixed Macho Arts"
+  },
+  {
+    "link": "projects/snowrider3d/index.html",
+    "imgSrc": "projects/snowrider3d/favicon.ico",
+    "title": "Snow Rider 3d"
   }
 ]
