@@ -92,29 +92,6 @@
              transform: rotate(360deg);
            }
          }
-         .g-login-btn {
-           position: absolute;
-           top: 20px;
-           left: 20px;
-           background-color: #db4437; /* Updated background color */
-           color: white;
-           padding: 10px 20px;
-           border: none;
-           border-radius: 5px;
-           font-size: 16px;
-           text-align: center;
-           display: flex;
-           align-items: center;
-           text-decoration: none;
-           cursor: pointer; /* Ensure cursor is pointer */
-         }
-         .g-login-btn img {
-           height: 16px;
-           margin-right: 10px;
-         }
-         .g-login-btn.logout {
-           background-color: #ff5722; /* Color for logout button */
-         }
        </style>
      </head>
      <body style="background-color: #121212; color: #ffffff; font-family: sans-serif; text-decoration: none; text-align: center;">
@@ -142,42 +119,6 @@
        <div id="game-container" class="flex-container"></div>
        <button id="back-to-top" style="display: none; position: fixed; bottom: 20px; right: 20px;">Back to top</button>
        <script>
-         // Function to update button state based on localStorage
-         function updateButtonState() {
-           const authBtn = document.getElementById('auth-btn');
-           const authText = document.getElementById('auth-text');
-           const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
- 
-           if (isLoggedIn) {
-             authBtn.classList.add('logout');
-             authText.textContent = 'Logout';
-           } else {
-             authBtn.classList.remove('logout');
-             authText.textContent = 'Login';
-           }
-         }
- 
-         // Event listener for button click
-         document.getElementById('auth-btn').addEventListener('click', function() {
-           const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
- 
-           if (isLoggedIn) {
-             // Handle logout
-             localStorage.removeItem('isLoggedIn');
-             updateButtonState();
-           } else {
- 
-             // Redirect to login page
-             setTimeout(() => {
-               window.location.href = 'https://iwishyouamerrynewyear.vercel.app/g/g.html';
-               localStorage.setItem('isLoggedIn', 'true'); // Simulate login
-             }, 1);
-           }
-         });
- 
-         // Initialize button state on page load
-         document.addEventListener('DOMContentLoaded', updateButtonState);
- 
          let games = [];
          fetch("config/games.json")
          .then((response) => response.json())
