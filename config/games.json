@@ -1,18 +1,8 @@
 [
   {
-    "link": "projects/1v1-Old-Old/1v1.html",
-    "imgSrc": "projects/1v1-Old-Old/favicon.ico",
-    "title": "1v1 Old Old"
-  },
-  {
     "link": "projects/1v1-Old/index.html",
     "imgSrc": "projects/1v1-Old/favicon.ico",
     "title": "1v1 Old"
-  },
-  {
-    "link": "projects/1v1-New/1v1.html",
-    "imgSrc": "projects/1v1-Old-Old/favicon.ico",
-    "title": "1v1 New"
   },
   {
     "link": "projects/just-fall/index.html",
