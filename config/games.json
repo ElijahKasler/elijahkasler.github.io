@@ -743,5 +743,10 @@
     "link": "projects/snowrider3d/index.html",
     "imgSrc": "projects/snowrider3d/favicon.ico",
     "title": "Snow Rider 3d"
+  },
+  {
+    "link": "projects/ovo/index.html",
+    "imgSrc": "projects/ovo/favicon.ico",
+    "title": "OvO"
   }
 ]
