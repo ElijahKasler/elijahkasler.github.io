@@ -748,5 +748,10 @@
     "link": "projects/ovo/index.html",
     "imgSrc": "projects/ovo/favicon.ico",
     "title": "OvO"
+  },
+  {
+    "link": "projects/pvz/index.html",
+    "imgSrc": "projects/pvz/favicon.ico",
+    "title": "Plants vs Zombies"
   }
 ]
