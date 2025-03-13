@@ -758,5 +758,10 @@
     "link": "projects/liquid/iframe.html",
     "imgSrc": "projects/liquid/favicon.ico",
     "title": "Liquid Soccer"
+  },
+  {
+    "link": "projects/escape/index.html",
+    "imgSrc": "projects/escape/favicon.ico",
+    "title": "Escape Road"
   }
 ]
