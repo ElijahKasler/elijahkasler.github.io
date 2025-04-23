@@ -755,13 +755,23 @@
     "title": "Plants vs Zombies"
   },
   {
-    "link": "projects/liquid/iframe.html",
+    "link": "projects/liquid/index.html",
     "imgSrc": "projects/liquid/favicon.ico",
     "title": "Liquid Soccer"
   },
   {
-    "link": "projects/escape/index.html",
-    "imgSrc": "projects/escape/favicon.ico",
-    "title": "Escape Road"
+    "link": "projects/game-admin/index.html",
+    "imgSrc": "projects/game-admin/favicon.png",
+    "title": "Game Admin"
+  },
+  {
+    "link": "projects/fill/index.html",
+    "imgSrc": "projects/fill/favicon.ico",
+    "title": "Fill The Oceans"
+  },
+  {
+    "link": "projects/tiny-fishing/index.html",
+    "imgSrc": "projects/tiny-fishing/favicon.ico",
+    "title": "Tiny Fishing"
   }
 ]
