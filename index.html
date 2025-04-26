@@ -1,214 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Scott</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      background-color: #121212;
+      color: #ffffff;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .top-link {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #1e1e1e;
+      padding: 10px;
+      text-align: center;
+      z-index: 999;
+      border-bottom: 1px solid #333;
+    }
+
+    .top-link a {
+      color: #22c55e;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    header {
+      background-color: #1e1e1e;
+      padding: 60px 20px 20px;
+      text-align: center;
+      border-bottom: 2px solid #22c55e;
+      margin-top: 5px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-family: 'Lora', serif;
+      font-size: 2.5em;
+      color: #22c55e;
+      margin-bottom: 5px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .controls a button {
+      cursor: pointer;
+      background-color: #22c55e;
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 20px;
+    }
+
+    .controls a:first-child button {
+      background-color: #b625cc;
+    }
+
+    .controls a:last-child button {
+      background-color: #3498db;
+    }
+
+    .search-bar {
+      display: block;
+      margin: 0 auto 30px;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 30px;
+      border: none;
+      width: 90%;
+      max-width: 600px;
+    }
+
+    .flex-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+    }
+
+    .game-tile {
+      background-color: #1f1f1f;
+      border-left: 5px solid #22c55e;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .game-tile:hover {
+      transform: scale(1.01);
+      background-color: #272727;
+    }
+
+    .game-icon {
+      width: 150px;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .game-title {
+      font-size: 1.3em;
+      font-weight: bold;
+      padding: 20px;
+      flex-grow: 1;
+    }
+
+    #loader {
+      display: block;
+      border: 16px solid #f3f3f3;
+      border-top: 16px solid #22c55e;
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      animation: spin 2s linear infinite;
+      margin: 40px auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9em;
+      color: #888;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #22c55e;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 25px; /* Round edges */
+      cursor: pointer;
+      display: none;
+      z-index: 999;
+    }
+
+    .back-to-top:hover {
+      background-color: #1e1e1e;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-link">
+    <a href="changelog.html" target="_blank">Click here for the changelog</a>
+  </div>
+
+  <header>
+    <h1>Projects</h1>
+  </header>
+
+
+  <div class="container">
+
+
+    <input type="text" id="search" onkeyup="searchGames()" class="search-bar" placeholder="Search for games..." />
+
+    <div id="loader"></div>
+    <div id="game-container" class="flex-container"></div>
+  </div>
+
+  <footer>&copy; 2025 Scott. All rights reserved.</footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTopBtn" onclick="scrollToTop()">Back to Top</button>
+
+  <script>
+    let games = [];
+    fetch("config/games.json")
+      .then((res) => res.json())
+      .then((data) => {
+        games = data;
+        const container = document.getElementById("game-container");
+        data.forEach((project) => {
+          const tile = document.createElement("a");
+          tile.href = project.link;
+          tile.className = "game-tile";
+          tile.innerHTML = ` 
+            <img class="game-icon" src="${project.imgSrc}" alt="${project.title}" />
+            <div class="game-title">${project.title}</div>
+          `;
+          container.appendChild(tile);
+        });
+        document.getElementById("loader").style.display = "none";
+      })
+      .catch((error) => console.error("Error loading games:", error));
+
+    function searchGames() {
+      const input = document.getElementById("search");
+      const filter = input.value.toUpperCase();
+      const container = document.getElementById("game-container");
+      container.innerHTML = "";
+      games
+        .filter((game) => game.title.toUpperCase().includes(filter))
+        .forEach((project) => {
+          const tile = document.createElement("a");
+          tile.href = project.link;
+          tile.className = "game-tile";
+          tile.innerHTML = ` 
+            <img class="game-icon" src="${project.imgSrc}" alt="${project.title}" />
+            <div class="game-title">${project.title}</div>
+          `;
+          container.appendChild(tile);
+        });
+    }
+
+    // Show the "Back to Top" button when scrolling
+    window.onscroll = function() {
+      const btn = document.getElementById("backToTopBtn");
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    };
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
 </html>
-   <!DOCTYPE html>
-   <html lang="en-US">
-     <head>
-       <title>Projects | Scott</title>
-       <meta name="keywords" content="front-end web developer, unblocked, games, google sites, unblocked games mom, ublocked, code, coding, programmer, development, javascript, jquery, bootstrap, sass, less, git" />
-       <meta property="og:title" content="Welcome to Scott, a lightweight, fast, and clean game site." />
-       <meta property="og:site_name" content="Scott" />
-       <meta property="og:description" content="Welcome to Scott, a lightweight, fast, and clean game site." />
-       <meta name="description" content="Welcome to Scott, a lightweight, fast, and clean game site." />
-       <meta name="author" content="Scott" />
-       <meta charset="UTF-8" />
-       <meta name="viewport" content="width=device-width, initial-scale=1" />
-       <link rel="icon" href="favicon.ico" />
-       <link rel="shortcut-icon" href="favicon.ico" />
-       <script src="/js/main.js"></script>
-       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-       <script src="./config.js"></script>
-       <script src="./script.js"></script>
-       <link rel="stylesheet" href="src/css/main.min.css">
-       <link href="https://cdn.staticaly.com/gh/hung1001/font-awesome-pro/4cac1a6/css/all.css" rel="stylesheet" type="text/css" />
-       <link rel="preconnect" href="https://fonts.googleapis.com">
-       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-       <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
-       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
-       <style>
-         p {
-           text-align: center;
-           max-width: 600px;
-           margin: 20px auto;
-         }
-         button {
-           cursor: pointer;
-           background-color: #22c55e;
-           border: none;
-           color: white;
-           padding: 15px 32px;
-           text-align: center;
-           text-decoration: none;
-           display: inline-block;
-           font-size: 16px;
-           border-radius: 20px;
-           margin-top: 20px;
-         }
-         .game-link {
-           height: 400px;
-           width: 300px;
-           text-decoration: none;
-         }
-         .game-tile {
-           background-color: #949494;
-           height: 400px;
-           width: 300px;
-           border-radius: 30px;
-         }
-         .game-icon {
-           border-radius: 30px;
-           width: 300px;
-           height: 300px;
-         }
-         .game-title {
-           font-size: 30px;
-           font-weight: bold;
-           color: #000000;
-           text-align: center;
-           margin: auto;
-         }
-         .flex-container {
-           display: flex;
-           flex-direction: row;
-           order: 0;
-           flex-grow: 0;
-           flex-wrap: wrap;
-           align-items: center;
-           justify-content: center;
-         }
-         .header {
-           display: none;
-         }
-         .map-container {
-           display: none;
-         }
-         .container {
-           padding: 10px;
-         }
-         @keyframes spin {
-           0% {
-             transform: rotate(0deg);
-           }
-           100% {
-             transform: rotate(360deg);
-           }
-         }
-       </style>
-     </head>
-     <body style="background-color: #121212; color: #ffffff; font-family: sans-serif; text-decoration: none; text-align: center;">
-       <h1 style="font-size: 3em; text-align: center;">Projects</h1>
-       <p class="text-center">
-         <a href="more.html" style="text-decoration: none;">
-           <button style="cursor: pointer; background-color: #b625cc; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border-radius: 20px; margin-top: 5px;">
-             Settings
-           </button>
-         </a>
-       </p>
-      <p class="text-center">
-   <a href="projects/Config/more-games.html" style="text-decoration: none;">
-     <button style="cursor: pointer; background-color: #3498db; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border-radius: 20px; margin-top: 5px;">
-       Add Game
-     </button>
-   </a>
- </p>
-       <input type="text" id="search" onkeyup="searchGames()" placeholder="Search for games..." style="width: 100%; font-size: 18px; padding: 6px 20px; margin: auto; border-radius: 30px; max-width: 600px; margin-bottom: 10px;" />
-       <div id="loader" style="display: block; border: 16px solid #f3f3f3; border-top: 16px solid #3498db; border-radius: 50%; width: 120px; height: 120px; animation: spin 2s linear infinite; margin: auto; margin-top: 1rem;"></div>
-       <div id="game-container" class="flex-container"></div>
-       <button id="back-to-top" style="display: none; position: fixed; bottom: 20px; right: 20px;">Back to top</button>
-       <script>
-         let games = [];
-         fetch("config/games.json")
-         .then((response) => response.json())
-         .then((data) => {
-           games = data;
-           const container = document.getElementById("game-container");
-           data.forEach((project) => {
-             const game = document.createElement("a");
-             game.href = project.link;
-               game.className = "game-link container";
-               game.innerHTML = `
-               <div class="game-tile">
-                 <img class="game-icon" src="${project.imgSrc}" alt="icon" />
-                 <p class="game-title">${project.title}</p>
-                 </div>`;
-                 container.appendChild(game);
-             });
-             document.getElementById("loader").style.display = "none";
-           })
-           .catch((error) => console.error("Error:", error));
- 
-         function searchGames() {
-           const input = document.getElementById("search");
-           const filter = input.value.toUpperCase();
-           const container = document.getElementById("game-container");
-           container.innerHTML = "";
-           games
-             .filter((game) => game.title.toUpperCase().includes(filter))
-             .forEach((project) => {
-               const game = document.createElement("a");
-               game.href = project.link;
-               game.className = "game-link container";
-               game.innerHTML = `
-               <div class="game-tile">
-                 <img class="game-icon" src="${project.imgSrc}" alt="icon" loading="lazy" />
-                 <p class="game-title">${project.title}</p>
-                 </div>`;
-               container.appendChild(game);
-             });
-           }
-           const backToTopButton = document.getElementById('back-to-top');
-           window.onscroll = function () {
-             if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-               backToTopButton.style.display = "block";
-             } else {
-             backToTopButton.style.display = "none";
-           }
-         };
- 
-         backToTopButton.onclick = function () {
-           document.body.scrollTop = 0;
-           document.documentElement.scrollTop = 0;
-         };
-       </script>
-      <script src="./config.js"></script>
-       <script src="./script.js"></script>
-       <script>
-         window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-       </script>
-       <script defer src="/_vercel/insights/script.js"></script>
-       <script>
-         window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-       </script>
-       <script defer src="/_vercel/speed-insights/script.js"></script>
-     </body>
-         <head>
-       <meta charset="UTF-8">
-       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <!-- CSS -->
-       <link rel="stylesheet" href="src/css/main.min.css">
-       <!-- Fontawesome -->
-       <link href="https://cdn.staticaly.com/gh/hung1001/font-awesome-pro/4cac1a6/css/all.css" rel="stylesheet" type="text/css" />
-       <!-- Google Fonts -->
-       <link rel="preconnect" href="https://fonts.googleapis.com">
-       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-       <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-       <!-- Leaflet -->
-       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
-       <link rel="icon" type="image/x-icon" href="./src/favicon.ico">
-       <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-       <!-- Notyf CSS -->
-       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
-     </head>
-     <body>
-       <header class="header"></header>
-       <script src="./config.js"></script>
-       <script src="./script.js"></script>
-       <style>
-         .header {
-           display: none
-         }
- 
-         .map-container {
-           display: none
-         }
-       </style>
