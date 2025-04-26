@@ -195,6 +195,8 @@
   <!-- Back to Top Button -->
   <button class="back-to-top" id="backToTopBtn" onclick="scrollToTop()">Back to Top</button>
 
+
+
   <script>
     let games = [];
     fetch("config/games.json")
@@ -249,5 +251,17 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js')
+    .then(registration => {
+      console.log('Service Worker registered with scope:', registration.scope);
+    })
+    .catch(error => {
+      console.log('Service Worker registration failed:', error);
+    });
+}
+</script>
+
 </body>
 </html>
