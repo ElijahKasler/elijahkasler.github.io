@@ -768,5 +768,10 @@
     "link": "projects/tiny/index.html",
     "imgSrc": "projects/tiny/favicon.ico",
     "title": "Tiny Fishing"
+  },
+  {
+    "link": "projects/crazy-cattle-3d/index.html",
+    "imgSrc": "projects/crazy-cattle-3d/favicon.ico",
+    "title": "Crazy Cattle 3d"
   }
 ]
