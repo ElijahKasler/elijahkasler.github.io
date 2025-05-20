@@ -768,5 +768,10 @@
     "link": "projects/crazy-cattle-3d/index.html",
     "imgSrc": "projects/crazy-cattle-3d/favicon.ico",
     "title": "Crazy Cattle 3d"
+  },
+  {
+    "link": "projects/block-blast/index.html",
+    "imgSrc": "projects/block-blast/favicon.ico",
+    "title": "Block Blast"
   }
 ]
