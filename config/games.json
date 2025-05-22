@@ -773,5 +773,10 @@
     "link": "projects/block-blast/index.html",
     "imgSrc": "projects/block-blast/favicon.ico",
     "title": "Block Blast"
+  },
+  {
+    "link": "projects/core-ball/index.html",
+    "imgSrc": "projects/core-ball/favicon.ico",
+    "title": "Core Ball"
   }
 ]
