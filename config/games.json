@@ -778,5 +778,10 @@
     "link": "projects/core-ball/index.html",
     "imgSrc": "projects/core-ball/favicon.ico",
     "title": "Core Ball"
+  },
+  {
+    "link": "projects/gons/index.html",
+    "imgSrc": "projects/gons/favicon.ico",
+    "title": "Gons.io"
   }
 ]
